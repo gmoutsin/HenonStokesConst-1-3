@@ -2,6 +2,8 @@
 
 Get[NotebookDirectory[]<>"RotHenonCoeffs.dat"]
 
+Print["NN="<>ToString[NN]]
+
 storagefile=OpenWrite[NotebookDirectory[]<>"RotHenonCoeffsList.jl"];
 
 WriteLine[storagefile,"const Nmax = "<> ToString[InputForm[NN]]<>"\n"]
@@ -26,4 +28,7 @@ WriteString[storagefile,",\n"<>StringReplace[ToString[InputForm[Wy[i]]],"/"->"//
 WriteLine[storagefile,"\n]"]
 
 Close[storagefile];
+
+
+
 
