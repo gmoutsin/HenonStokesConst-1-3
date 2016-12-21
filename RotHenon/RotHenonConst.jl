@@ -137,8 +137,15 @@ end
 const outfile = open("RotHenonConst.dat","w");
 
 
-for i in 1:10
-  StokesConstant(outfile,200*i,100);
+
+const impart = 100
+
+const steps = 10
+
+
+
+for i in 1:steps
+  StokesConstant(outfile,200*i,impart);
 end
 
 

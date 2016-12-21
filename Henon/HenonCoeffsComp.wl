@@ -63,7 +63,7 @@ h[x_,y_]:={x+2 y+3/4 (1-(x+1+y)^2),y+3/4 (1-(x+1+y)^2)}
 Henon[x_,y_]:=Evaluate[Expand[h@@h@@h[x,y]]];
 
 
-Nmax=10;
+Nmore=10;
 
 
 time=Timing[
@@ -74,7 +74,7 @@ Wx[counter]=(Wx[counter]/.sol[[1]]);
 Wy[counter]=(Wy[counter]/.sol[[1]]);.
 WriteString[storagefile,"Wx["<>ToString[counter,InputForm]<>"]="<>ToString[Wx[counter],InputForm]<>";\n"];
 WriteString[storagefile,"Wy["<>ToString[counter,InputForm]<>"]="<>ToString[Wy[counter],InputForm]<>";NN++;\n"];
-,{counter,NN+1,Nmax}]][[1]];
+,{counter,NN+1,Nmore}]][[1]];
 
 Print[time]
 

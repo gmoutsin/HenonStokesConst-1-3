@@ -77,7 +77,7 @@
 
 
 (* ::Input:: *)
-(*Nmax=10;*)
+(*Nmore=10;*)
 
 
 (* ::Input:: *)
@@ -89,7 +89,7 @@
 (*Wy[counter]=(Wy[counter]/.sol[[1]]);.*)
 (*WriteString[storagefile,"Wx["<>ToString[counter,InputForm]<>"]="<>ToString[Wx[counter],InputForm]<>";\n"];*)
 (*WriteString[storagefile,"Wy["<>ToString[counter,InputForm]<>"]="<>ToString[Wy[counter],InputForm]<>";NN++;\n"];*)
-(*,{counter,NN+1,NN+Nmax}]][[1]];*)
+(*,{counter,NN+1,NN+Nmore}]][[1]];*)
 (**)
 (*Print[time]*)
 
