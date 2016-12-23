@@ -68,6 +68,20 @@ end
 
 
 
+########################################################################
+#
+#   If you want to chance the number of terms of the asymptotic series
+#   used uncomment the next line and set Nmax. Nmax was declared
+#   a constant and Julia will complain but as long as the new value
+#   is an integer there will be no problems
+#
+# Nmax = 100
+#
+########################################################################
+
+
+
+
 
 function W(rp::Int,ip::Int)
   t = BigFloat(rp) + BigFloat(ip)*im
@@ -107,9 +121,7 @@ end
 
 
 function StokesConstant(outfile::IOStream,N::Int64,impart::Int64)  
-#   println("***********************");
   print("$(N) ");
-#   println("***********************");
   ppast = W(-N,impart);
   pfuture = W(N,impart);
   pDpast = DW(-N,impart);
@@ -119,7 +131,6 @@ function StokesConstant(outfile::IOStream,N::Int64,impart::Int64)
     pDpast = DHenon3(ppast) * pDpast;
     ppast = Henon3(ppast);
     pfuture = HenonInv3(pfuture);
-#     println(ppast);
   end
   
   
@@ -138,10 +149,18 @@ const outfile = open("RotHenonConst.dat","w");
 
 
 
+
+########################################################################
+#
+#   The following two variables can be chaged safely
+#   The Stokes constant is approximated at t = impart*i.
+#
+
 const impart = 100
 
 const steps = 10
 
+########################################################################
 
 
 for i in 1:steps
